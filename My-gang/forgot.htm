@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" /><title>Forgot Password</title>
+
+<link rel="stylesheet" href="style1.css" type="text/css" media="screen" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+
+<script>
+function passwordStrength(password)
+{
+	var desc = new Array();
+	desc[0] = "&nbsp;&nbsp;&nbsp;&nbsp;Very Weak";
+	desc[1] = "&nbsp;&nbsp;&nbsp;&nbsp;Weak";
+	desc[2] = "&nbsp;&nbsp;&nbsp;&nbsp;Better";
+	desc[3] = "&nbsp;&nbsp;&nbsp;&nbsp;Medium";
+	desc[4] = "&nbsp;&nbsp;&nbsp;&nbsp;Strong";
+	desc[5] = "&nbsp;&nbsp;&nbsp;&nbsp;Strongest";
+
+	var score   = 0;
+
+	//if password bigger than 6 give 1 point
+	if (password.length > 6) score++;
+
+	//if password has both lower and uppercase characters give 1 point	
+	if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) score++;
+
+	//if password has at least one number give 1 point
+	if (password.match(/\d+/)) score++;
+
+	//if password has at least one special caracther give 1 point
+	if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) )	score++;
+
+	//if password bigger than 12 give another 1 point
+	if (password.length > 12) score++;
+
+	 document.getElementById("passwordDescription").innerHTML = desc[score];
+	 document.getElementById("passwordStrength").className = "strength" + score;
+}
+</script>
+</head>
+
+
+
+<body>
+<div id="container">
+<div id="page_header">
+<div id="company_name">
+<h1><span>United Brothers</span></h1>
+</div>
+</div>
+
+<div id="page_menu">
+<ul>
+<li class="home"><span>Home</span></li>
+<li class="aboutus"><span>About
+Us</span></li>
+<li class="gallery"><span>Gallery</span></li>
+<li class="portfolio"><span>Portfolio</span></li>
+<li class="procedure"><span>Procedure</span></li>
+<li class="contact"><span>Contact</span></li>
+</ul>
+</div>
+
+<div id="left_sidebar">
+<div class="content_header">
+<h2></h2>
+</div>
+<div class="content_box_right">
+<div class="content_box_left">
+<div class="content_box">
+<a href="index.php">Home</a><br />
+<br /><hr color="#605f5e"/>
+<a href="#"><br>
+About us </a><br />
+</div>
+</div>
+</div>
+</div>
+
+<div id="main_content">
+<div class="content_header">
+<h2><span>Forgot Password </span></h2>
+</div>
+<div class="content_box_right">
+<div class="content_box_left">
+<div class="content_box">
+<div id="main_content_border">
+
+
+<div id="signupbox_left">
+<div id="signupbox_right">
+<div id="signupbox">
+
+<form action="forgot_action.php" method="post">
+
+<div class="signupbox_formfield"> 
+  <p><br>
+  &nbsp;&nbsp;&nbsp; Enter your email id. Your password will be sent on your email id </p>
+  <p><br>
+  &nbsp;&nbsp;&nbsp;<font face="Tahoma, Arial, sans-serif" color="#fafafa" size="2"> Enter your email id </font>&nbsp;&nbsp; &nbsp;&nbsp;
+    <input type="text" name="emailid" id="emailid" maxlength="25" />
+    
+            <br>
+          <br>
+          <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" name="submit" value="Submit">
+    <br>
+    <br />
+    
+    
+    
+    
+    
+    
+    
+      </p>
+  <div class="clearthis">&nbsp;</div>
+</div>
+
+</form>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="divider">&nbsp;</div>
+
+<div id="loginbox_left">
+<div id="loginbox_right">
+<div id="loginbox">
+<h2>Sign In </h2>
+<form action="login_action.php">
+<div class="loginbox_formfield"> <strong>Username:</strong>
+<input type="text" />
+<div class="clearthis">&nbsp;</div>
+</div>
+<div class="loginbox_formfield"> <strong>Password:</strong>
+<input type="password" />
+<div class="clearthis">&nbsp;</div>
+</div>
+<div class="loginbox_formfield"> <input value="Submit" class="button" type="submit" />
+</div>
+</form>
+<div id="loginbox_register"> <a href="register.html"></a></div>
+</div>
+</div>
+</div>
+
+<div id="tips">
+<div id="tips_box">
+<h2>&nbsp;</h2>
+<ul>
+<li></li>
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+</ul>
+</div>
+</div>
+
+<div class="clearthis">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="clearthis">&nbsp;</div>
+
+<div id="page_footer"> Give your feedback on <a href="mailto:my.gang@rediffmail.com">my.gang@rediffmail.com </div>
+</div>
+</body></html>
